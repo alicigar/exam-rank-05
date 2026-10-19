@@ -1,0 +1,95 @@
+¿Qué se nos pide en este ejercicio?
+1. Crear una clase vect2, que represente un vector matemático de 2 dimensiones cuyos componentes sean int. 
+
+P.E: (3, 7)
+
+v[0] = 3
+v[1] = 7
+
+Y tenemos que entregar vect2.hpp y vect2.cpp
+
+Tiene que soportar: sumas, restas y multiplicación por un escalar.
+
+P.E:
+
+A = (1, 2)
+B = (3, 4)
+
+A + B = (4, 6)
+A += B = "  "
+
+
+P.E:
+
+A = (5, 7)
+B = (2, 3)
+
+A - B = (3, 4)
+A -= B = "  "
+
+P.E:
+(2, 2) * 3 = (6, 6)
+vect2(2,2) * 2 == vect2(4,4) debe ser true
+v2 = 3 * v2;
+
+ESQUEMA vect.hpp 
+ 
+1.
+ifndef VECT2_HPP
+define ""
+
+2.
+include -> iostream
+
+3.
+class vect2
+{
+	4. //datos internos
+	private:
+		int x;
+		int y;
+	5.
+	public:
+		//Funciones principales requeridas por el main.cpp
+		//A. Crear y copiar(4)
+		constrcutor vacío
+		constructor con valores
+		constructor de copia (1 const)
+		const vect2 &copy
+		operador de asignación(1 const) (asigna la copia)
+		operator=const vect2 &copy
+	
+		//Funciones explícitas del ejercicio 
+		//B. Acceso a componentes(2)
+		como consigo acceder a x e y usando []
+		int operator int index
+		int
+		int (1 const)
+
+		//C. Incremento y decremento(4)
+		vect2 &operator++()
+		vect2 operator++(int)
+		--
+		--
+
+		//D. Operadores compuestos: modifican el vector(3)
+		vect2 &operator+=(const vect2 &v);
+					   -=
+					   *=(int s);
+		//E. Operaciones que devuelven un vector nuevo(4)
+		vect2 operator+(const vect2 &v) const; (2 const)
+					  -						   (2 const)
+		vect2 operator*=(int s)const;
+		vect2 operator-()const; //cambia el signo de ambos componentes, no es resta
+
+		//F. Comparaciones (2)
+		bool operator==(const vect2 &v) const;
+		bool		 !=
+		//G. Funciones externas(2)
+		friend vect2 operator*(int s, const vect2 &v);
+		friend std::ostream& operator<<(std::ostream &os, const vect2 &v);
+
+}; <-no olvidar el ;
+
+6.
+endif
