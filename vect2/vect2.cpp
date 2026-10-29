@@ -112,7 +112,7 @@ bool vect2::operator!=(const vect2& v) const
     
 vect2 operator*(int s, const vect2& v)
 {
-  return vect2(v.x * s, v.y * s);
+  return (vect2(v.x * s, v.y * s));
 }
 
 std::ostream& operator<<(std::ostream& os, const vect2& v)
