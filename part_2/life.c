@@ -6,7 +6,6 @@ int	main(int argc, char **argv)
 {
 	if (argc != 4)
 		return (1);
-	
 	int		w = atoi(argv[1]), h = atoi(argv[2]), iter = atoi(argv[3]);
 	int		board[h][w], next[h][w], x = 0, y = 0, pen = 0;
 	char	c;
@@ -38,5 +37,5 @@ int	main(int argc, char **argv)
 		for (int j = 0; j < w; j++) { putchar(board[i][j] ? 'O' : ' '); }
 		putchar('\n');
 	}
-	return 0;
+	return (0);
 }
